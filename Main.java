@@ -22,11 +22,17 @@ public class Main {
                     System.out.println("Mensagem decodificada: " + MorseDecoder.decodeMorse(morseTree, morseInput));
                     break;
 
-                case "2":
+                    case "2":
                     System.out.print("\nDigite o texto a ser codificado:\n> ");
                     String textoInput = scanner.nextLine().trim();
-                    System.out.println("Código Morse: " + MorseEncoder.encode(textoInput));
+                    try {
+                        System.out.println("Código Morse: " + MorseEncoder.encode(textoInput));
+                    } catch (IllegalArgumentException e) {
+                        System.out.println("Erro: " + e.getMessage());
+                        System.out.println("Retornando ao menu.");
+                    }
                     break;
+                
 
                 case "3":
                     System.out.println("\n--- Árvore Binária Morse ---");

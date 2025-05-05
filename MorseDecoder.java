@@ -14,15 +14,21 @@ public class MorseDecoder {
 
     public static String decodeMorse(Node morseTree, String input) {
         StringBuilder decodedMessage = new StringBuilder();
-        String[] sequences = input.split(" ");
-
+        String[] sequences = input.trim().split(" ");
+    
         for (String sequence : sequences) {
-            if (sequence.equals("/")) { // representa um espaço entre palavras
+            if (sequence.equals("/")) {
                 decodedMessage.append(" ");
             } else {
-                decodedMessage.append(morseToChar(morseTree, sequence, 0));
+                char decodedChar = morseToChar(morseTree, sequence, 0);
+                if (decodedChar == '\0') {
+                    return "Erro: sequência inválida ou não encontrada -> \"" + sequence + "\"";
+                }
+                decodedMessage.append(decodedChar);
             }
         }
+    
         return decodedMessage.toString();
     }
+    
 }
