@@ -4,19 +4,31 @@ public class MorseTreeBuilder {
 
         insertMorseCode(root, ".", 'E');
         insertMorseCode(root, "-", 'T');
-        insertMorseCode(root, "..", 'I');
         insertMorseCode(root, ".-", 'A');
-        insertMorseCode(root, "-.", 'N');
-        insertMorseCode(root, "--", 'M');
-        insertMorseCode(root, "...", 'S');
-        insertMorseCode(root, "..-", 'U');
-        insertMorseCode(root, ".-.", 'R');
-        insertMorseCode(root, ".--", 'W');
-        insertMorseCode(root, "-..", 'D');
-        insertMorseCode(root, "-.-", 'K');
-        insertMorseCode(root, "--.", 'G');
-        insertMorseCode(root, "---", 'O');
+        insertMorseCode(root, "-...", 'B');
         insertMorseCode(root, "-.-.", 'C');
+        insertMorseCode(root, "-..", 'D');
+        insertMorseCode(root, "..-.", 'F');
+        insertMorseCode(root, "--.", 'G');
+        insertMorseCode(root, "....", 'H');
+        insertMorseCode(root, "..", 'I');
+        insertMorseCode(root, ".---", 'J');
+        insertMorseCode(root, "-.-", 'K');
+        insertMorseCode(root, ".-..", 'L');
+        insertMorseCode(root, "--", 'M');
+        insertMorseCode(root, "-.", 'N');
+        insertMorseCode(root, "---", 'O');
+        insertMorseCode(root, ".--.", 'P');
+        insertMorseCode(root, "--.-", 'Q');
+        insertMorseCode(root, ".-.", 'R');
+        insertMorseCode(root, "...", 'S');
+        insertMorseCode(root, "-", 'T');
+        insertMorseCode(root, "..-", 'U');
+        insertMorseCode(root, "...-", 'V');
+        insertMorseCode(root, ".--", 'W');
+        insertMorseCode(root, "-..-", 'X');
+        insertMorseCode(root, "-.--", 'Y');
+        insertMorseCode(root, "--..", 'Z');
 
         return root;
     }
