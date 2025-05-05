@@ -2,12 +2,12 @@ public class MorseTreeBuilder {
     public static Tree buildMorseTree() {
         Tree root = new Tree('\0');
 
-        insertMorseCode(root, ".", 'E');
-        insertMorseCode(root, "-", 'T');
+
         insertMorseCode(root, ".-", 'A');
         insertMorseCode(root, "-...", 'B');
         insertMorseCode(root, "-.-.", 'C');
         insertMorseCode(root, "-..", 'D');
+        insertMorseCode(root, ".", 'E');
         insertMorseCode(root, "..-.", 'F');
         insertMorseCode(root, "--.", 'G');
         insertMorseCode(root, "....", 'H');
@@ -29,6 +29,7 @@ public class MorseTreeBuilder {
         insertMorseCode(root, "-..-", 'X');
         insertMorseCode(root, "-.--", 'Y');
         insertMorseCode(root, "--..", 'Z');
+
 
         return root;
     }
