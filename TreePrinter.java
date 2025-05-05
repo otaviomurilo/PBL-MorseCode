@@ -1,10 +1,10 @@
 public class TreePrinter {
 
-    public static void printTree(Tree root) {
+    public static void printTree(Node root) {
         printTree(root, 0);
     }
 
-    private static void printTree(Tree node, int depth) {
+    private static void printTree(Node node, int depth) {
         if (node == null) return;
 
         // Imprime ramo direito (traços) primeiro

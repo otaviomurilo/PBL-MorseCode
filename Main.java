@@ -2,29 +2,45 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Tree morseTree = MorseTreeBuilder.buildMorseTree();
+        Node morseTree = MorseTreeBuilder.buildMorseTree();
+        Scanner scanner = new Scanner(System.in);
 
-                // decodificação
- Scanner scanner = new Scanner(System.in);
-System.out.print("Digite a sequência em código Morse (use espaços entre letras e / entre palavras):\n> ");
-String input = scanner.nextLine().trim();
-scanner.close();
+        while (true) {
+            System.out.println("\n--- MENU ---");
+            System.out.println("1 - Decodificar código Morse");
+            System.out.println("2 - Codificar texto para Morse");
+            System.out.println("3 - Imprimir Árvore Morse");
+            System.out.println("4 - Encerrar programa");
+            System.out.print("Escolha uma opção: ");
 
+            String input = scanner.nextLine().trim();
 
- System.out.println("\nMorse Code: " + input);
-System.out.println("Decoded Message: " + MorseDecoder.decodeMorse(morseTree, input));
+            switch (input) {
+                case "1":
+                    System.out.print("\nDigite a sequência em código Morse (use espaços entre letras e / entre palavras):\n> ");
+                    String morseInput = scanner.nextLine().trim();
+                    System.out.println("Mensagem decodificada: " + MorseDecoder.decodeMorse(morseTree, morseInput));
+                    break;
 
-                //codificação
-// System.out.print("\nDigite o texto a ser codificado:\n> ");
-//  String input = scanner.nextLine().trim();  
-//  scanner.close();
+                case "2":
+                    System.out.print("\nDigite o texto a ser codificado:\n> ");
+                    String textoInput = scanner.nextLine().trim();
+                    System.out.println("Código Morse: " + MorseEncoder.encode(textoInput));
+                    break;
 
-//  System.out.println("\nTexto: " + input);
-//  System.out.println("Código Morse: " + MorseEncoder.encode(input));
+                case "3":
+                    System.out.println("\n--- Árvore Binária Morse ---");
+                    TreePrinter.printTree(morseTree);
+                    break;
 
+                case "4":
+                    System.out.println("Até mais!");
+                    scanner.close();
+                    return;
 
-        // Impressão da árvore
-        System.out.println("\n--- Morse Binary Tree ---");
-        TreePrinter.printTree(morseTree);
+                default:
+                    System.out.println("Opção inválida. Tente novamente.");
+            }
+        }
     }
 }

@@ -1,6 +1,6 @@
 public class MorseTreeBuilder {
-    public static Tree buildMorseTree() {
-        Tree root = new Tree('\0');
+    public static Node buildMorseTree() {
+        Node root = new Node('\0');
 
 
         insertMorseCode(root, ".-", 'A');
@@ -34,18 +34,18 @@ public class MorseTreeBuilder {
         return root;
     }
 
-    private static void insertMorseCode(Tree root, String sequence, char letter) {
-        Tree current = root;
+    private static void insertMorseCode(Node root, String sequence, char letter) {
+        Node current = root;
 
         for (char symbol : sequence.toCharArray()) {
             if (symbol == '.') {
                 if (current.left == null) {
-                    current.left = new Tree('\0'); // Novo nó vazio
+                    current.left = new Node('\0'); // Novo nó vazio
                 }
                 current = current.left;
             } else if (symbol == '-') {
                 if (current.right == null) {
-                    current.right = new Tree('\0');
+                    current.right = new Node('\0');
                 }
                 current = current.right;
             }

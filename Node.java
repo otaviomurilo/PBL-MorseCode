@@ -1,7 +1,8 @@
-public class Node {
-    private Node left; //ponto
-    private Node right; //traço
-    private char letter;
+public class Node{
+
+    char letter; //armazenada no nó
+    Node left; //representa um ponto
+    Node right; //representa um traço
 
     public Node(char letter) {
         this.letter = letter;
@@ -9,27 +10,4 @@ public class Node {
         this.right = null;
     }
 
-    public char getLetter() {
-        return letter;
-    }
-
-    public void setLetter(char letter) {
-        this.letter = letter;
-    }
-
-    public Node getLeft() {
-        return left;
-    }
-
-    public void setLeft(Node left) { //atribui um nó à esquerda do nó atual
-        this.left = left;
-    }
-
-    public Node getRight() {
-        return right;
-    }
-
-    public void setRight(Node right) {
-        this.right = right;
-    }
 }

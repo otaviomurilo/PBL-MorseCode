@@ -1,5 +1,5 @@
 public class MorseEncoder {
-    private static Tree morseTree = MorseTreeBuilder.buildMorseTree();
+    private static Node morseTree = MorseTreeBuilder.buildMorseTree();
 
     // Codifica um texto em Morse
     public static String encode(String text) {
@@ -10,7 +10,7 @@ public class MorseEncoder {
             char c = text.charAt(i);
 
             if (c == ' ') {
-                encoded.append("/ "); 
+                encoded.append("/ ");
                 continue;
             }
 
@@ -31,12 +31,12 @@ public class MorseEncoder {
     }
 
     // Inicia a busca pelo código Morse de um caractere
-    private static String findMorseCode(Tree root, char target) {
+    private static String findMorseCode(Node root, char target) {
         return searchMorseCode(root, target, new StringBuilder());
     }
 
     // Busca recursiva pelo caractere na árvore, acumulando o caminho (código Morse)
-    private static String searchMorseCode(Tree node, char target, StringBuilder path) {
+    private static String searchMorseCode(Node node, char target, StringBuilder path) {
         if (node == null) {
             return null;
         }
@@ -64,4 +64,4 @@ public class MorseEncoder {
 
         return null; // Caractere não encontrado neste ramo
     }
-}   
+}
