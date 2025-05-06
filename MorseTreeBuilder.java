@@ -2,7 +2,6 @@ public class MorseTreeBuilder {
     public static Node buildMorseTree() {
         Node root = new Node('\0');
 
-
         insertMorseCode(root, ".-", 'A');
         insertMorseCode(root, "-...", 'B');
         insertMorseCode(root, "-.-.", 'C');
@@ -30,17 +29,15 @@ public class MorseTreeBuilder {
         insertMorseCode(root, "-.--", 'Y');
         insertMorseCode(root, "--..", 'Z');
 
-
         return root;
     }
 
     private static void insertMorseCode(Node root, String sequence, char letter) {
         Node current = root;
-
         for (char symbol : sequence.toCharArray()) {
             if (symbol == '.') {
                 if (current.left == null) {
-                    current.left = new Node('\0'); // Novo nó vazio
+                    current.left = new Node('\0');
                 }
                 current = current.left;
             } else if (symbol == '-') {

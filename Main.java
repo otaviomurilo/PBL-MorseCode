@@ -32,11 +32,13 @@ public class Main {
                         System.out.println("Retornando ao menu.");
                     }
                     break;
-                
+
 
                 case "3":
                     System.out.println("\n--- Árvore Binária Morse ---");
-                    TreePrinter.printTree(morseTree);
+                    TreePrinter.printTree(morseTree); // Impressão no console
+                    // Inicia a interface JavaFX em uma nova thread
+                    new Thread(() -> javafx.application.Application.launch(TreeVisualizer.class)).start();
                     break;
 
                 case "4":
